@@ -20,8 +20,8 @@ public struct IdentityRecord
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello, World!");
+        using StreamReader s = new StreamReader(path);
     }
 }
