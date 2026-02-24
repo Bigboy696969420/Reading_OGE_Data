@@ -84,7 +84,8 @@ static class CSVReadWriter
 
     private static string GetField(string[] fields, int index)
     {
-        // Trim whitespace
+        if (index < 0 || index >= fields.Length) return string.Empty;
+
         string value = fields[index].Trim();
 
         if (value.Length >= 2 && value.StartsWith(',') && value.EndsWith(','))
