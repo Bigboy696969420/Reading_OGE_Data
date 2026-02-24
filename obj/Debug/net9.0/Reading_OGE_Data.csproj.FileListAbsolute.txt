@@ -1,0 +1,15 @@
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.exe
+C:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.deps.json
+C:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.runtimeconfig.json
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.dll
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.pdb
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.AssemblyInfoInputs.cache
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.AssemblyInfo.cs
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.csproj.CoreCompileInputs.cache
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.sourcelink.json
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.dll
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\refint\Reading_OGE_Data.dll
+c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.pdb
+C:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.genruntimeconfig.cache
+C:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\ref\Reading_OGE_Data.dll

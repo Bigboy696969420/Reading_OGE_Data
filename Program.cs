@@ -1,5 +1,9 @@
 ﻿namespace Reading_OGE_Data;
 
+using System;
+using System.Collections.Generic;
+using System.IO;
+
 // IdentityReacord added by AI
 public struct IdentityRecord
 {
@@ -23,7 +27,9 @@ class Program
 {
     static void Main()
     {
-        CSVReadWriter CSVRW = new CSVReadWriter();
+        List<IdentityRecord> records = CSVReadWriter.Read(AppDomain.CurrentDomain.BaseDirectory + "\\FrancisTuttleIdentities.csv");
+
+        Console.WriteLine($"Total records read: {records.Count}");
     }
 }
 
@@ -74,5 +80,45 @@ static class CSVReadWriter
         }
 
         return records;
+    }
+
+    private static string GetField(string[] fields, int index)
+    {
+        // Trim whitespace
+        string value = fields[index].Trim();
+
+        if (value.Length >= 2 && value.StartsWith(',') && value.EndsWith(','))
+        {
+            value = value.Substring(1, value.Length - 2);
+        }
+
+        return value;
+    }
+
+    private static string[] SplitCsvLine(string line)
+    {
+        List<string> fields = new();
+        var current = new System.Text.StringBuilder();
+
+        for (int i = 0; i < line.Length; i++)
+        {
+            char c = line[i];
+
+            if (c == ',')
+            {
+                if (i + 1 < line.Length && line[i + 1] == ',')
+                {
+                    current.Append(',');
+                    i++;
+                }
+            }
+            else
+            {
+                current.Append(c);
+            }
+        }
+
+        fields.Add(current.ToString());
+        return fields.ToArray();
     }
 }
