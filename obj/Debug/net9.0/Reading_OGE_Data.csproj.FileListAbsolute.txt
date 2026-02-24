@@ -13,3 +13,18 @@ c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9
 c:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.pdb
 C:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.genruntimeconfig.cache
 C:\Users\Matthew\Desktop\VSCode\Reading OGE Data\Reading_OGE_Data\obj\Debug\net9.0\ref\Reading_OGE_Data.dll
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.exe
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.deps.json
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.runtimeconfig.json
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.dll
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\bin\Debug\net9.0\Reading_OGE_Data.pdb
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.AssemblyInfoInputs.cache
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.AssemblyInfo.cs
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.csproj.CoreCompileInputs.cache
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.sourcelink.json
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.dll
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\refint\Reading_OGE_Data.dll
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.pdb
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\Reading_OGE_Data.genruntimeconfig.cache
+C:\Users\mc1101448\Desktop\Capstone_code\Reading_OGE_Data\obj\Debug\net9.0\ref\Reading_OGE_Data.dll

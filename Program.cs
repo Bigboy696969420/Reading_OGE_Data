@@ -11,9 +11,9 @@ public struct IdentityRecord
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public string WorkEmail { get; set; }
-    public string CloudLifecycleState { get; set; }
+    public bool CloudLifecycleState { get; set; }
     public string IdentityId { get; set; }
-    public string IsManager { get; set; }
+    public bool IsManager { get; set; }
     public string Department { get; set; }
     public string JobTitle { get; set; }
     public string Uid { get; set; }
@@ -30,6 +30,7 @@ class Program
         List<IdentityRecord> records = CSVReadWriter.Read(AppDomain.CurrentDomain.BaseDirectory + "\\FrancisTuttleIdentities.csv");
 
         Console.WriteLine($"Total records read: {records.Count}");
+        //Console.WriteLine($"Total inactive records: {CSVReadWriter.CountInactive(records)}");
     }
 }
 
@@ -44,31 +45,31 @@ static class CSVReadWriter
         {
             using StreamReader s = new StreamReader(path);
 
-            _ = s.ReadLine();
+            s.ReadLine();
 
             while ((line = s.ReadLine()) != null)
             {
-                string[] fields = SplitCsvLine(line); // Add The method for this to work
+                string[] fields = line.Split(',');
 
                 // IdentityReacord added by AI
                 // Map CSV columns -> struct properties by index.
                 // If your CSV columns are in a different order, adjust the indices below.
                 IdentityRecord r = new IdentityRecord
                 {
-                    DisplayName = GetField(fields, 0), // Add GetField method later
-                    FirstName = GetField(fields, 1), // Add GetField method later
-                    LastName = GetField(fields, 2), // Add GetField method later
-                    WorkEmail = GetField(fields, 3), // Add GetField method later
-                    CloudLifecycleState = GetField(fields, 4), // Add GetField method later
-                    IdentityId = GetField(fields, 5), // Add GetField method later
-                    IsManager = GetField(fields, 6), // Add GetField method later
-                    Department = GetField(fields, 7), // Add GetField method later
-                    JobTitle = GetField(fields, 8), // Add GetField method later
-                    Uid = GetField(fields, 9), // Add GetField method later
-                    AccessType = GetField(fields, 10), // Add GetField method later
-                    AccessSourceName = GetField(fields, 11), // Add GetField method later
-                    AccessDisplayName = GetField(fields, 12), // Add GetField method later
-                    AccessDescription = GetField(fields, 13), // Add GetField method later
+                    DisplayName = fields[0],
+                    FirstName = GetField(ref fields, 2),
+                    LastName = GetField(ref fields, 3),
+                    WorkEmail = GetField(ref fields, 4),
+                    CloudLifecycleState = (fields[4] == "active") ? true:false,
+                    IdentityId = GetField(ref fields, 6),
+                    IsManager = (fields[6] == "TRUE") ? true:false,
+                    Department = GetField(ref fields, 8),
+                    JobTitle = GetField(ref fields, 9),
+                    Uid = GetField(ref fields, 10),
+                    AccessType = GetField(ref fields, 11),
+                    AccessSourceName = GetField(ref fields, 12),
+                    AccessDisplayName = GetField(ref fields, 13),
+                    AccessDescription = GetField(ref fields, 14),
                 };
 
                 records.Add(r);
@@ -82,18 +83,15 @@ static class CSVReadWriter
         return records;
     }
 
-    private static string GetField(string[] fields, int index)
+    private static string GetField(ref string[] fields, int index)
     {
-        if (index < 0 || index >= fields.Length) return string.Empty;
+        if (fields.Length == 0) return string.Empty;
 
-        string value = fields[index].Trim();
+        string OfField = "";
 
-        if (value.Length >= 2 && value.StartsWith(',') && value.EndsWith(','))
-        {
-            value = value.Substring(1, value.Length - 2);
-        }
 
-        return value;
+
+        return OfField;
     }
 
     private static string[] SplitCsvLine(string line)
@@ -121,5 +119,19 @@ static class CSVReadWriter
 
         fields.Add(current.ToString());
         return fields.ToArray();
+    }
+
+    public static int CountInactive(List<IdentityRecord> records)
+    {
+        int num = 0;
+
+        foreach (IdentityRecord IDR in records)
+        {
+            Console.WriteLine(IDR.CloudLifecycleState);
+            if (IDR.CloudLifecycleState == "inactive")
+                num++;
+        }
+
+        return num;
     }
 }
