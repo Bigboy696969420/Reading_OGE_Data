@@ -30,7 +30,27 @@ class Program
         List<IdentityRecord> records = CSVReadWriter.Read(AppDomain.CurrentDomain.BaseDirectory + "\\FrancisTuttleIdentities.csv");
 
         Console.WriteLine($"Total records read: {records.Count}");
-        Console.WriteLine($"Total inactive records: {CSVReadWriter.CountInactive(records).Count()}");
+        List<IdentityRecord> inactiveUsers = CSVReadWriter.CountInactive(records);
+        Console.WriteLine($"Total inactive records: {inactiveUsers.Count()}");
+        var n1 = from name in
+             (from record in records
+              select record.DisplayName).Distinct()
+                 orderby name
+                 select name;
+
+        foreach (var v in n1)
+        {
+            Console.WriteLine(v);
+        }
+
+        var n2 = (from r in inactiveUsers
+          group r by r.DisplayName into g
+          select g)
+         .ToDictionary(
+             g => g.Key,
+             g => g.ToList()
+         );
+
     }
 }
 
