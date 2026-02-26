@@ -57,19 +57,19 @@ static class CSVReadWriter
                 IdentityRecord r = new IdentityRecord
                 {
                     DisplayName = fields[0],
-                    FirstName = GetField(ref fields, 2),
-                    LastName = GetField(ref fields, 3),
-                    WorkEmail = GetField(ref fields, 4),
+                    FirstName = fields[1],
+                    LastName = fields[2],
+                    WorkEmail = fields[3],
                     CloudLifecycleState = (fields[4] == "active") ? true:false,
-                    IdentityId = GetField(ref fields, 6),
+                    IdentityId = fields[5],
                     IsManager = (fields[6] == "TRUE") ? true:false,
-                    Department = GetField(ref fields, 8),
-                    JobTitle = GetField(ref fields, 9),
-                    Uid = GetField(ref fields, 10),
-                    AccessType = GetField(ref fields, 11),
-                    AccessSourceName = GetField(ref fields, 12),
-                    AccessDisplayName = GetField(ref fields, 13),
-                    AccessDescription = GetField(ref fields, 14),
+                    Department = fields[7],
+                    JobTitle = fields[8],
+                    Uid = fields[9],
+                    AccessType = fields[10],
+                    AccessSourceName = fields[11],
+                    AccessDisplayName = fields[12],
+                    AccessDescription = fields[13],
                 };
 
                 records.Add(r);
@@ -128,7 +128,7 @@ static class CSVReadWriter
         foreach (IdentityRecord IDR in records)
         {
             Console.WriteLine(IDR.CloudLifecycleState);
-            if (IDR.CloudLifecycleState == "inactive")
+            if (IDR.CloudLifecycleState)
                 num++;
         }
 
