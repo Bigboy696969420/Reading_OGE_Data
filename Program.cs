@@ -30,7 +30,7 @@ class Program
         List<IdentityRecord> records = CSVReadWriter.Read(AppDomain.CurrentDomain.BaseDirectory + "\\FrancisTuttleIdentities.csv");
 
         Console.WriteLine($"Total records read: {records.Count}");
-        //Console.WriteLine($"Total inactive records: {CSVReadWriter.CountInactive(records)}");
+        Console.WriteLine($"Total inactive records: {CSVReadWriter.CountInactive(records).Count()}");
     }
 }
 
@@ -60,9 +60,9 @@ static class CSVReadWriter
                     FirstName = fields[1],
                     LastName = fields[2],
                     WorkEmail = fields[3],
-                    CloudLifecycleState = (fields[4] == "active") ? true:false,
+                    CloudLifecycleState = (fields[4] == "active") ? true : false,
                     IdentityId = fields[5],
-                    IsManager = (fields[6] == "TRUE") ? true:false,
+                    IsManager = (fields[6] == "TRUE") ? true : false,
                     Department = fields[7],
                     JobTitle = fields[8],
                     Uid = fields[9],
@@ -121,17 +121,10 @@ static class CSVReadWriter
         return fields.ToArray();
     }
 
-    public static int CountInactive(List<IdentityRecord> records)
+    public static List<IdentityRecord> CountInactive(List<IdentityRecord> records)
     {
-        int num = 0;
-
-        foreach (IdentityRecord IDR in records)
-        {
-            Console.WriteLine(IDR.CloudLifecycleState);
-            if (IDR.CloudLifecycleState)
-                num++;
-        }
-
-        return num;
+        return records
+        .Where(r => !r.CloudLifecycleState)
+        .ToList();
     }
 }
